@@ -1,3 +1,7 @@
 # README
 
-`@umijs/max` 模板项目，更多功能参考 [Umi Max 简介](https://umijs.org/docs/max/introduce)
+# 项目启动
+
+1.先把 micro-app 启动 2.pnpm i 3.pnpm dev
+
+# pont 使用

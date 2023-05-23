@@ -11,8 +11,8 @@ export default defineConfig({
   },
   routes: [
     {
-      path: '/mica-app/*',
-      microApp: 'mica-app',
+      path: '/micro-app/*',
+      microApp: 'micro-app',
     },
   ],
   npmClient: 'pnpm',
@@ -20,7 +20,7 @@ export default defineConfig({
     master: {
       apps: [
         {
-          name: 'mica-app',
+          name: 'micro-app',
           entry: '//localhost:8888',
           // container: "#app",
           // activeRule: "/vue",
