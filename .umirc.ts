@@ -1,6 +1,10 @@
 import { defineConfig } from '@umijs/max';
 
 export default defineConfig({
+  define: {
+    'process.env.MICRO_APP_PORT': process.env.MICRO_APP_PORT,
+    'process.env.HOST': process.env.HOST,
+  },
   antd: {},
   access: {},
   model: {},
@@ -9,23 +13,8 @@ export default defineConfig({
   layout: {
     title: '@umijs/max',
   },
-  routes: [
-    {
-      path: '/micro-app/*',
-      microApp: 'micro-app',
-    },
-  ],
   npmClient: 'pnpm',
   qiankun: {
-    master: {
-      apps: [
-        {
-          name: 'micro-app',
-          entry: '//localhost:8888',
-          // container: "#app",
-          // activeRule: "/vue",
-        },
-      ],
-    },
+    master: {},
   },
 });

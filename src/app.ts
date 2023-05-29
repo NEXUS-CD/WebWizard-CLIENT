@@ -4,6 +4,8 @@
 export async function getInitialState(): Promise<{ name: string }> {
   return { name: '@umijs/max' };
 }
+const MICRO_APP_PORT = process.env.MICRO_APP_PORT || 8888;
+const HOST = process.env.HOST || '0.0.0.0';
 // (window as any).__POWERED_BY_QIANKUN__ = true;
 export const layout = () => {
   return {
@@ -32,8 +34,9 @@ export const layout = () => {
 
     routes: [
       {
-        // component: 'IndexPage',
+        component: 'home',
         name: '欢迎', // 兼容此写法
+        path: '/',
         // icon: 'testicon',
         // // 更多功能查看
         // // https://beta-pro.ant.design/docs/advanced-menu
@@ -51,4 +54,17 @@ export const layout = () => {
       },
     ],
   };
+};
+console.debug('[home] [Line 4]: env', process.env.MICRO_APP_PORT);
+
+export const qiankun = {
+  apps: [
+    {
+      name: 'micro-app',
+      entry: `//${HOST}:` + MICRO_APP_PORT,
+      props: location,
+      // container: "#app",
+      // activeRule: "/vue",
+    },
+  ],
 };
