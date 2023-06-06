@@ -1,5 +1,112 @@
-.homeBody {
+.technologyStackBody {
   height: 100vh;
-  line-height: 100vh;
-  text-align: center;
+  position: relative;
+
+  &-iconBox {
+    // height: ;
+    width: 900rem;
+    height: 90rem;
+    background: #fff;
+    box-shadow: 3rem 4rem 30rem rgba(136, 136, 136, 10%);
+    border-radius: 100rem;
+    padding: 0 20rem;
+    box-sizing: border-box;
+    margin: -45rem auto;
+
+    img {
+      height: 60rem;
+    }
+  }
+
+  &-contentBox {
+    padding-top: 100px;
+    width: 80%;
+    margin: 0 auto;
+
+    &-descriptionBox {
+      &-text1 {
+        color: rgb(39, 174, 96);
+        text-align: center;
+        font-size: 14rem;
+      }
+
+      &-text2 {
+        margin-top: 5px;
+        text-align: center;
+        font-size: 40rem;
+        font-weight: bold;
+      }
+
+      &-text3 {
+        max-width: 900rem;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+    }
+
+    &-technologyBox {
+      margin-top: 60px;
+      // background-color: aqua;
+      justify-content: space-between;
+
+      &-content {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        box-shadow: 3px 4px 30px rgba(136, 136, 136, 10%);
+        border-radius: 5px;
+        padding: 30px 25px;
+        height: 150rem;
+        min-height: 100px;
+        width: 49%;
+        margin-bottom: 30rem;
+        position: relative;
+
+        &::after {
+          content: '';
+          display: block;
+          height: 2px;
+          background-color: rgb(39, 174, 96);
+          width: 0;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          transition-duration: 0.5s;
+        }
+
+        &:hover img {
+          // 与transition-duration: .5s; 配合动画更平滑
+          transform: scale(1.1, 1.1);
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        img {
+          width: 100rem;
+          margin-right: 10rem;
+          transition-duration: 0.5s;
+        }
+
+        &-text {
+          > span:nth-child(1) {
+            font-weight: bold;
+            font-size: 16rem;
+          }
+
+          > span:nth-child(2) {
+            color: #676767;
+            font-size: 16rem;
+          }
+
+          > span:nth-child(3) {
+            font-weight: bold;
+            font-size: 16rem;
+          }
+        }
+      }
+    }
+  }
 }
