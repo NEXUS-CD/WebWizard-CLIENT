@@ -1,19 +1,12 @@
-/*
- * @Author: zhangwc zhangwc@knownsec.com
- * @Date: 2023-06-04 17:24:00
- * @LastEditors: zhangwc zhangwc@knownsec.com
- * @LastEditTime: 2023-06-05 23:47:06
- * @FilePath: /WebWizard/umi/src/app.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 // 运行时配置
 // 全局初始化数据配置，用于 Layout 用户信息和权限初始化
 // 更多信息见文档：https://umijs.org/docs/api/runtime-config#getinitialstate
 export async function getInitialState(): Promise<{ name: string }> {
   return { name: '@umijs/max' };
 }
-const MICRO_APP_PORT = process.env.MICRO_APP_PORT || 8888;
-const HOST = process.env.HOST || '0.0.0.0';
+// 目前没有使用vue3，所以暂时注释
+// const MICRO_APP_PORT = process.env.MICRO_APP_PORT || 8888;
+// const HOST = process.env.HOST || '0.0.0.0';
 // (window as any).__POWERED_BY_QIANKUN__ = true;
 export const layout = () => {
   return {
@@ -42,15 +35,13 @@ export const layout = () => {
   };
 };
 console.debug('[home] [Line 4]: env', process.env.MICRO_APP_PORT);
-
-export const qiankun = {
-  apps: [
-    {
-      name: 'micro-app',
-      entry: `//${HOST}:` + MICRO_APP_PORT,
-      props: location,
-      // container: "#app",
-      // activeRule: "/vue",
-    },
-  ],
-};
+// 目前没有使用vue3，所以暂时注释
+// export const qiankun = {
+//   apps: [
+//     {
+//       name: 'micro-app',
+//       entry: `//${HOST}:` + MICRO_APP_PORT,
+//       props: location,
+//     },
+//   ],
+// };
