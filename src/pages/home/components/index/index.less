@@ -1,0 +1,39 @@
+.indexBody {
+  height: calc(100vh - 70rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6c7a89;
+
+  &-leftBox {
+    &-greeting {
+      > p:first-child {
+        color: rgba(39, 174, 96, 100%);
+      }
+    }
+
+    &-greeting,
+    &-meaning,
+    &-toolsBox {
+      color: #333;
+    }
+
+    &-meaning {
+      margin-top: 10px;
+    }
+
+    &-toolsBox {
+      dd {
+        text-indent: 2em;
+        margin-top: 6px;
+      }
+    }
+  }
+
+  &-rightBox {
+    > img {
+      height: 400px;
+      border-radius: 50%;
+    }
+  }
+}

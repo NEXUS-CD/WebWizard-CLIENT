@@ -4,8 +4,9 @@
 export async function getInitialState(): Promise<{ name: string }> {
   return { name: '@umijs/max' };
 }
-const MICRO_APP_PORT = process.env.MICRO_APP_PORT || 8888;
-const HOST = process.env.HOST || '0.0.0.0';
+// 目前没有使用vue3，所以暂时注释
+// const MICRO_APP_PORT = process.env.MICRO_APP_PORT || 8888;
+// const HOST = process.env.HOST || '0.0.0.0';
 // (window as any).__POWERED_BY_QIANKUN__ = true;
 export const layout = () => {
   return {
@@ -31,40 +32,16 @@ export const layout = () => {
     hideInBreadcrumb: true,
     // 子项往上提，仍旧展示,
     flatMenu: true,
-
-    routes: [
-      {
-        component: 'home',
-        name: '欢迎', // 兼容此写法
-        path: '/',
-        // icon: 'testicon',
-        // // 更多功能查看
-        // // https://beta-pro.ant.design/docs/advanced-menu
-        // // ---
-        // // 新页面打开
-        // target: '_blank',
-        // // 不展示顶栏
-        headerRender: false,
-        // // 不展示页脚
-        footerRender: false,
-        // // 不展示菜单
-        menuRender: false,
-        // // 不展示菜单顶栏
-        menuHeaderRender: false,
-      },
-    ],
   };
 };
 console.debug('[home] [Line 4]: env', process.env.MICRO_APP_PORT);
-
-export const qiankun = {
-  apps: [
-    {
-      name: 'micro-app',
-      entry: `//${HOST}:` + MICRO_APP_PORT,
-      props: location,
-      // container: "#app",
-      // activeRule: "/vue",
-    },
-  ],
-};
+// 目前没有使用vue3，所以暂时注释
+// export const qiankun = {
+//   apps: [
+//     {
+//       name: 'micro-app',
+//       entry: `//${HOST}:` + MICRO_APP_PORT,
+//       props: location,
+//     },
+//   ],
+// };
