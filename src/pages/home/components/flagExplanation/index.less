@@ -3,3 +3,38 @@
   line-height: 100vh;
   text-align: center;
 }
+
+.flagTile {
+  background-color: white;
+  width: 138px;
+
+  .image {
+    height: 138px;
+    width: 138px;
+    overflow: hidden;
+
+    > img {
+      height: 138px;
+      width: 138px;
+      object-fit: contain;
+
+      &:hover {
+        zoom: 1.2;
+      }
+    }
+  }
+
+  .tileContent {
+    padding: 30px 25px;
+    max-height: 221px;
+  }
+
+  .linkTextStyle {
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      zoom: 1.1;
+    }
+  }
+}

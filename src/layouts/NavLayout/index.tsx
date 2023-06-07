@@ -7,6 +7,7 @@
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import logo from '@/assets/images/logo-green.png';
+import { AuthDialog } from '@/components';
 import { DownOutlined } from '@ant-design/icons';
 import { useDebounceFn } from 'ahooks';
 import { Col, Dropdown, Row, Space } from 'antd';
@@ -88,6 +89,15 @@ const NavComponent = () => {
       window.removeEventListener('scroll', endRun);
     };
   }, []);
+  const [authDialogOpen, setAuthDialogOpen] = useState(false);
+  const [authType, setAuthType] = useState<'login' | 'register'>('register');
+
+  const openAuthDialog =
+    (type: 'register' | 'login' = 'register') =>
+    () => {
+      setAuthType(type);
+      setAuthDialogOpen(true);
+    };
   return (
     <Row className={styles.navBody}>
       <Col className={styles['navBody-navBox']} span={24}>
@@ -103,8 +113,14 @@ const NavComponent = () => {
             className={styles['navBody-navBox-loginAndRegistrationEntry']}
           >
             <div>
-              <span>登录</span>|<span>注册</span>
+              <span onClick={openAuthDialog('login')}>登录</span>|
+              <span onClick={openAuthDialog('login')}>注册</span>
             </div>
+            <AuthDialog
+              open={authDialogOpen}
+              authType={authType}
+              onClose={() => setAuthDialogOpen(false)}
+            />
           </Col>
         </Row>
       </Col>
