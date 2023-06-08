@@ -1,5 +1,56 @@
-.homeBody {
-  height: 100vh;
-  line-height: 100vh;
-  text-align: center;
+.resourcesBody {
+  &-resourcesContent {
+    &-item {
+      width: 32%;
+      box-shadow: 3rem 4rem 30rem rgba(136, 136, 136, 10%);
+      border-radius: 5rem;
+      padding: 40rem 25rem 25rem;
+      margin-bottom: 30rem;
+      position: relative;
+      z-index: 1;
+      background-color: #fff;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        background-color: rgb(39, 174, 96);
+        z-index: -1;
+        transition-duration: 0.5s;
+      }
+
+      &:hover::before {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover,
+      &:hover span {
+        color: #fff;
+      }
+
+      &:hover &-id {
+        color: rgb(39, 174, 96);
+      }
+
+      > span {
+        color: #676767;
+        padding-top: 10rem;
+        line-height: 20rem;
+      }
+
+      &-id {
+        border-radius: 5rem;
+        background-color: #eee;
+        padding: 5rem 10rem;
+        font-size: 22rem;
+        font-weight: 600;
+        position: absolute;
+        top: -18rem;
+      }
+    }
+  }
 }
