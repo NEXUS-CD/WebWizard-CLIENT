@@ -1,5 +1,71 @@
-.homeBody {
-  height: 100vh;
-  line-height: 100vh;
-  text-align: center;
+.aboutUsBody {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &-exploitInfo {
+    position: relative;
+    margin-bottom: 30rem;
+
+    &:hover &-imgBox > img {
+      transform: scale(1.1, 1.1);
+      transition-duration: 0.5s;
+    }
+
+    &:hover &-imgBox-overlay {
+      height: 450rem;
+    }
+
+    &-imgBox {
+      overflow: hidden;
+
+      &-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0%), #093);
+        width: 100%;
+        height: 0;
+        position: absolute;
+        transition-duration: 0.5s;
+        overflow: hidden;
+        z-index: 1; //  transform: scale(1.1, 1.1);因为上面这个代码，transform会脱离文档流。会盖住这个元素，提高层级
+        &-iconList {
+          width: calc(2 * 50rem + 10rem);
+          position: absolute;
+          bottom: 70rem;
+          left: 50%;
+          margin-left: -55rem;
+          display: flex;
+          justify-content: space-between;
+
+          &-iconBox {
+            width: 50rem;
+            height: 50rem;
+            line-height: 55rem;
+            text-align: center;
+            border-radius: 5rem;
+            background-color: #fff;
+            cursor: pointer;
+          }
+        }
+      }
+
+      > img {
+        height: 450rem;
+      }
+    }
+
+    &-title {
+      position: relative;
+      box-shadow: 0 0 25rem rgba(86, 68, 169, 10%);
+      text-align: center;
+      border-radius: 10rem;
+      padding: 40rem 30rem;
+      background-color: #fff;
+      margin: 0 auto;
+      width: 90%;
+      font-size: 30rem;
+      font-weight: 800;
+      margin-top: -55rem;
+      z-index: 1;
+    }
+  }
 }
