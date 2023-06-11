@@ -1,0 +1,33 @@
+.item {
+  box-sizing: border-box;
+
+  &-header {
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+
+    &-iconBox {
+      box-sizing: border-box;
+    }
+
+    &-iconPosition {
+      order: -1;
+    }
+  }
+
+  &-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: 0.2s;
+    padding: 0 !important; //禁止在此元素加padding
+    &-box {
+      min-height: 0;
+      padding: 0 !important; //禁止在此元素加padding，需要加padding请加元素
+    }
+  }
+
+  &-showContent {
+    grid-template-rows: 1fr;
+  }
+}
