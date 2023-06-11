@@ -12,10 +12,10 @@ import node_img from '@/assets/images/home/node.png';
 import react_img from '@/assets/images/home/react.png';
 import ts_img from '@/assets/images/home/ts.png';
 import vue_img from '@/assets/images/home/vue.png';
-import { green } from '@ant-design/colors';
+import { cyan, green } from '@ant-design/colors';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Row, Space, Typography } from 'antd';
-import { CSSProperties, FC, Fragment, PropsWithChildren } from 'react';
+import { CSSProperties, FC, PropsWithChildren } from 'react';
 import { Title } from '../title';
 import styles from './index.less';
 
@@ -75,10 +75,14 @@ const authorTextStyle = {
   color: green.primary,
   fontSize: 16,
 } satisfies CSSProperties;
+const containerStyle = {
+  backgroundColor: cyan[0],
+  padding: '40px 20px',
+} satisfies CSSProperties;
 const titleTextStyle = { fontSize: 25, lineHeight: 1 } satisfies CSSProperties;
 export default () => {
   return (
-    <Fragment>
+    <div style={containerStyle}>
       <Title hint="不完成 誓不罢休">立FLAG</Title>
       <Row justify="center">
         <Space size="large">
@@ -96,6 +100,6 @@ export default () => {
           ))}
         </Space>
       </Row>
-    </Fragment>
+    </div>
   );
 };
