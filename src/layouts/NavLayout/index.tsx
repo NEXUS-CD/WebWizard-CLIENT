@@ -114,7 +114,7 @@ const NavComponent = () => {
           >
             <div>
               <span onClick={openAuthDialog('login')}>登录</span>|
-              <span onClick={openAuthDialog('login')}>注册</span>
+              <span onClick={openAuthDialog('register')}>注册</span>
             </div>
             <AuthDialog
               open={authDialogOpen}

@@ -12,20 +12,25 @@ export const AuthDialog: FC<Props> = ({ open, authType, onClose }) => {
   return (
     <Modal open={open} footer={null} title={title} onCancel={onClose}>
       <Form labelCol={{ span: 6 }}>
-        <Form.Item label="上传头像" name="avatar" valuePropName="fileList">
-          <Upload listType="picture-circle" showUploadList={false}>
-            <PlusOutlined />
-          </Upload>
-        </Form.Item>
+        {authType === 'register' && (
+          <Form.Item label="上传头像" name="avatar" valuePropName="fileList">
+            <Upload listType="picture-circle" showUploadList={false}>
+              <PlusOutlined />
+            </Upload>
+          </Form.Item>
+        )}
         <Form.Item label="用户名" name="username" required>
           <Input type="email" />
         </Form.Item>
         <Form.Item label="密码" name="password" required>
           <Input.Password />
         </Form.Item>
+        <Form.Item label="验证码" name="verificationCode" required>
+          <Input />
+        </Form.Item>
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="primary" htmlType="submit">
-            登录
+            {title}
           </Button>
         </Form.Item>
       </Form>
