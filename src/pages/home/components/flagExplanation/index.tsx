@@ -77,7 +77,7 @@ const authorTextStyle = {
 } satisfies CSSProperties;
 const containerStyle = {
   backgroundColor: cyan[0],
-  padding: '40px 20px',
+  padding: '40rem 2rem',
 } satisfies CSSProperties;
 const titleTextStyle = { fontSize: 25, lineHeight: 1 } satisfies CSSProperties;
 export default () => {
