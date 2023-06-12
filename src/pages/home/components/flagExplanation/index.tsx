@@ -16,8 +16,8 @@ import { cyan, green } from '@ant-design/colors';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Row, Space, Typography } from 'antd';
 import { CSSProperties, FC, PropsWithChildren } from 'react';
-import { Title } from '../title';
 import styles from './index.less';
+import { Title } from './title';
 
 const { Text, Paragraph } = Typography;
 interface TileProps {
