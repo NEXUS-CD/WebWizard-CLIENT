@@ -10,6 +10,7 @@ import { BaseTitle } from '@/components/home/baseComponent';
 import { Row } from 'antd';
 import Col from 'antd/lib/grid/col';
 import styles from './index.less';
+import { Fragment, PropsWithChildren } from 'react';
 
 interface TResourcesContent {
   data: {
@@ -18,14 +19,13 @@ interface TResourcesContent {
   }[];
 }
 
-const ResourcesContent: React.FC<TResourcesContent> = (props) => {
-  const { data } = props;
+const ResourcesContent: React.FC<PropsWithChildren<TResourcesContent>> = ({ dhildren }) => {
   return (
     <Row
       justify={'space-between'}
       className={styles['resourcesBody-resourcesContent']}
     >
-      {data.map((item, index) => (
+      {children.map((item, index) => (
         <Col
           key={index}
           className={styles['resourcesBody-resourcesContent-item']}
@@ -33,8 +33,7 @@ const ResourcesContent: React.FC<TResourcesContent> = (props) => {
           <div className={styles['resourcesBody-resourcesContent-item-id']}>
             0{index + 1}
           </div>
-          <h3>{item.title}</h3>
-          <span>{item.description}</span>
+          {item.props.children}
         </Col>
       ))}
     </Row>
@@ -92,7 +91,14 @@ export default () => {
       }
     >
       <section className={styles.resourcesBody}>
-        <ResourcesContent data={Mock} />
+        <ResourcesContent data={Mock}>
+          {Mock.map(({ title, description}) => (
+            <Fragment key={title}>
+              <h3>{title}</h3>
+              <span>{description}</span>
+            </Fragment>
+          ))}
+        </ResourcesContent>
       </section>
     </BaseTitle>
   );
