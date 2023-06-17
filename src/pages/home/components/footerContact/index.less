@@ -1,0 +1,53 @@
+.footerContactBody {
+  margin: 0 auto;
+  color: #fff;
+  background-image: linear-gradient(
+      rgba(18, 19, 24, 90%),
+      rgba(18, 19, 24, 90%)
+    ),
+    url('../../../../assets/images/home/footer3-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 20rem;
+  margin-top: 60rem;
+
+  &-head {
+    padding: 2% 6%;
+
+    &-introduce {
+      flex-grow: 1;
+
+      &-icon {
+        margin-bottom: 20rem;
+
+        img {
+          width: 40%;
+        }
+      }
+
+      p {
+        line-height: 30rem;
+        font-size: 16rem;
+        color: #fff;
+      }
+    }
+
+    &-feature-title,
+    &-technology-title,
+    &-connection-title {
+      margin-bottom: 8%;
+    }
+
+    &-connection-content-icon {
+      span {
+        color: rgb(39, 174, 96);
+        margin-right: 10rem;
+      }
+    }
+  }
+
+  &-hover:hover {
+    color: rgb(39, 174, 96);
+    cursor: pointer;
+  }
+}
